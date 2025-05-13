@@ -7,7 +7,7 @@ STUDENT_FILE = 'students.txt'
 
 def load_students():
     if not os.path.exists(STUDENT_FILE):
-        print("❌ students.txt not found. Please create it with student names.")
+        print("students.txt not found. Please create it with student names.")
         return []
     with open(STUDENT_FILE, 'r') as file:
         return [line.strip() for line in file.readlines() if line.strip()]
@@ -33,11 +33,11 @@ def mark_attendance(students):
         writer = csv.writer(file)
         writer.writerow([today] + attendance)
 
-    print("\n✅ Attendance marked successfully!\n")
+    print("\n Attendance marked successfully!\n")
 
 def view_attendance():
     if not os.path.exists(FILENAME):
-        print("\n⚠️  No attendance records found.\n")
+        print("\n No attendance records found.\n")
         return
 
     with open(FILENAME, mode='r') as file:
@@ -64,10 +64,10 @@ def main():
         elif choice == '2':
             view_attendance()
         elif choice == '3':
-            print("👋 Exiting the Attendance Tracker.")
+            print(" Exiting the Attendance Tracker.")
             break
         else:
-            print("❌ Invalid choice. Please try again.")
+            print(" Invalid choice. Please try again.")
 
 if __name__ == "__main__":
     main()
